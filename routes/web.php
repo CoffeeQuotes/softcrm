@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Activity\ActivityController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\Deal\DealController;
 use App\Http\Controllers\Admin\Deal\LostReasonController;
 use App\Http\Controllers\Admin\Deal\PipelineController;
@@ -60,6 +61,10 @@ Route::get('/', function () {
  * */
 
 Route::prefix('admin')->group(function () {
+    /**
+     * Welcome Admin 
+     */
+    Route::get('dashboard', DashboardController::class)->name('admin.dashboard');
     /**
      * Lead
      *  People
