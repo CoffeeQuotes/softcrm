@@ -10,6 +10,9 @@ class DashboardController extends Controller
     //
     public function __invoke()
     {
-        return view('admin.dashboard');
+        $pageData = [
+            'pageTitle' => 'Dashboard'
+        ];
+        return view('admin.dashboard')->with($pageData);
     }
 }

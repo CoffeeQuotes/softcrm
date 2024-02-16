@@ -5,15 +5,18 @@
             <nav id="left-sidebar-nav" class="sidebar-nav">
                 <ul class="metismenu">
                     <li class="g_heading">Project</li>
-                    <li class="active"><a href="index-2.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+                    <li class="{{ $pageTitle == 'Dashboard' ? 'active' : '' }}"><a
+                            href="{{ route('admin.dashboard') }}"><i
+                                class="fa fa-dashboard"></i><span>Dashboard</span></a>
                     </li>
-                    <li>
+                    <li
+                        class="{{ $pageTitle == 'People' || $pageTitle == 'Organizations' || $pageTitle == 'Lead Groups' ? 'active' : '' }}">
                         <a href="javascript:void(0)" class="has-arrow arrow-c"><i
                                 class="fa fa-users"></i><span>Leads</span></a>
                         <ul>
                             <li><a href="{{ route('people.index') }}">People</a></li>
-                            <li><a href="{{ route('organizations.index') }}">Organization</a></li>
-                            <li><a href="{{ route('lead-groups.index') }}">Lead Group</a></li>
+                            <li><a href="{{ route('organizations.index') }}">Organizations</a></li>
+                            <li><a href="{{ route('lead-groups.index') }}">Lead Groups</a></li>
                         </ul>
                     </li>
                     <li>
@@ -27,7 +30,8 @@
                         </ul>
                     </li>
 
-                    <li><a href="{{ route('invoices.index') }}"><i class="fa fa-file-text"></i><span>Invoices</span></a>
+                    <li><a href="{{ route('invoices.index') }}"><i
+                                class="fa fa-file-text"></i><span>Invoices</span></a>
                     </li>
                     <li>
                         <a href="javascript:void(0)" class="has-arrow arrow-c"><i

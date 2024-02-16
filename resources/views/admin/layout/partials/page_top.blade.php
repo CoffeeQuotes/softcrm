@@ -3,7 +3,7 @@
         <div class="page-header">
             <div class="left">
                 <a href="javascript:void(0)" class="icon menu_toggle mr-3"><i class="fa  fa-align-left"></i></a>
-                <h1 class="page-title">Dashboard</h1>
+                <h1 class="page-title">{{ $pageTitle ?? 'Dashboard' }}</h1>
             </div>
             <div class="right">
                 <div class="input-icon xs-hide mr-4">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Lead;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Lead\Person;
 
 class PeopleController extends Controller
 {
@@ -13,7 +14,12 @@ class PeopleController extends Controller
     public function index()
     {
         //
-        return "index";
+        $people = Person::all();
+        $pageData = [
+            'pageTitle' => 'People',
+            'people' => $people,
+        ];
+        return view('admin.leads.people')->with($pageData);
     }
 
     /**
